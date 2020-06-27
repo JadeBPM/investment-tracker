@@ -48,7 +48,7 @@ const Routes = (props: RoutesModuleProps) => {
     }
   });
 
-  const isConnected: boolean = !!props.user;
+  const isConnected = !!props.user;
 
   return (
     <React.Fragment>

@@ -4,22 +4,15 @@ import {useState} from 'react';
 import {Form, Button, Col} from 'react-bootstrap';
 import './style.css';
 
-const Home = () => {
-  const [apiResult, setApiResult] = useState('');
-  const callApi = () => {
-    // quick and dirty test for calling the api
-    axios
-      .get('http://localhost:5200/Login/GetLogin')
+function Home() {
+
+  const submitInvestment = () => {
+    console.log("F")
+    axios.post('http://localhost:5200/Investment/CreateInvestment', { Amount: 100, type: "voo"})
       .then((response: any) => {
-        console.log(response);
-        setApiResult(JSON.stringify(response.data, null, 2));
+        console.log("post finished")
       })
-      .catch((error) => {
-        const {status, statusText} = error.response;
-        setApiResult(`${status}: ${statusText}`);
-      });
-    console.log(apiResult);
-  };
+  }
 
   return (
     <div className="container my-2">
@@ -34,11 +27,12 @@ const Home = () => {
             <Form.Label>Investment Type</Form.Label>
             <Form.Control as="select" value="Choose...">
               <option>Choose...</option>
-              <option>...</option>
+              <option>VOO</option>
+              <option>VOOV</option>
             </Form.Control>
           </Form.Group>
           <div className="btn-inv">
-            <Button variant="primary" type="submit" onClick={callApi}>
+            <Button variant="primary" type="submit" onClick={submitInvestment}>
               +
             </Button>
           </div>
