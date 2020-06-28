@@ -1,0 +1,8 @@
+node_modules
+dev.js
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
