@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jmyer\\source\\repos\\Projects\\BudgetBackend\\IdentityServer\\IdentityServer.csproj": {}
+    "C:\\Users\\Jade\\Documents\\investment-tracker\\BudgetBE\\IdentityServer\\IdentityServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jmyer\\source\\repos\\Projects\\BudgetBackend\\IdentityServer\\IdentityServer.csproj": {
+    "C:\\Users\\Jade\\Documents\\investment-tracker\\BudgetBE\\IdentityServer\\IdentityServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jmyer\\source\\repos\\Projects\\BudgetBackend\\IdentityServer\\IdentityServer.csproj",
+        "projectUniqueName": "C:\\Users\\Jade\\Documents\\investment-tracker\\BudgetBE\\IdentityServer\\IdentityServer.csproj",
         "projectName": "IdentityServer",
-        "projectPath": "C:\\Users\\jmyer\\source\\repos\\Projects\\BudgetBackend\\IdentityServer\\IdentityServer.csproj",
-        "packagesPath": "C:\\Users\\jmyer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jmyer\\source\\repos\\Projects\\BudgetBackend\\IdentityServer\\obj\\",
+        "projectPath": "C:\\Users\\Jade\\Documents\\investment-tracker\\BudgetBE\\IdentityServer\\IdentityServer.csproj",
+        "packagesPath": "C:\\Users\\Jade\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jade\\Documents\\investment-tracker\\BudgetBE\\IdentityServer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jmyer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jade\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/BlackPearlMail/_packaging/BlackPearlMail/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -87,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

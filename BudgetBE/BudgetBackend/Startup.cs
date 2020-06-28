@@ -69,7 +69,7 @@ namespace BudgetBackend
             }
             app.UseRouting();
             app.UseCors("default");
-            app.UseAuthentication();
+            //app.UseAuthentication();
             //app.UseHttpsRedirection();
 
             //app.UseRouting();

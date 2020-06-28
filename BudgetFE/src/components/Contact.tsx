@@ -3,7 +3,7 @@ import {ReactElement, FunctionComponent} from 'react';
 
 const Contact: FunctionComponent<{}> = (): ReactElement => (
   <p>
-    <a href="https://github.com/ThunderDev1">https://github.com/ThunderDev1</a>
+    <a href="https://github.com/Jade-Myers">https://github.com/Jade-Myers</a>
   </p>
 );
 

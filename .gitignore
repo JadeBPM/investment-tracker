@@ -5,4 +5,5 @@ dev.js
 _ReSharper.*
 bin
 obj
+debug
 packages

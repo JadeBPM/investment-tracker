@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetBackend.Controllers
 {
+   
     [Route("[controller]/[action]")]
     [ApiController]
     public class LoginController : ControllerBase
