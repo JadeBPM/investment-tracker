@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using BudgetBackend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetBackend.Controllers
 {
-   
+    [AllowAnonymous]
     [Route("[controller]/[action]")]
     [ApiController]
     public class LoginController : ControllerBase
@@ -22,7 +24,7 @@ namespace BudgetBackend.Controllers
         [HttpPost]
         public IActionResult Login(string username, string password)
         {
-            using (var context = new BudgetContext())
+            using (var context = new UserContext())
             {
                 var userExist = context.Users.FirstOrDefault(user => user.Email == username && user.Password == password);
 
@@ -33,7 +35,7 @@ namespace BudgetBackend.Controllers
         [HttpPost]
         public HttpStatusCode SignUp(string firstName, string username, string password)
         {
-            using (var context = new BudgetContext())
+            using (var context = new UserContext())
             {
              
                 var user = new User()

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetBackend
 {
-    public class BudgetContext : DbContext
+    public class UserContext : DbContext
     {
         public DbSet<User> Users { get; set; }
 

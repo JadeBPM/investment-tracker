@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BudgetBackend.Migrations
 {
-    [DbContext(typeof(BudgetContext))]
+    [DbContext(typeof(UserContext))]
     [Migration("20200405200106_unique")]
     partial class unique
     {

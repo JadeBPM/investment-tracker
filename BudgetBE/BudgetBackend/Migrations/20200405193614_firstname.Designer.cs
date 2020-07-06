@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BudgetBackend.Migrations
 {
-    [DbContext(typeof(BudgetContext))]
+    [DbContext(typeof(UserContext))]
     [Migration("20200405193614_firstname")]
     partial class firstname
     {
