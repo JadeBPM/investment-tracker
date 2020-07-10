@@ -20,7 +20,6 @@ namespace BudgetBackend.Models
         public List<InvestmentHistory> InvestmentHistories { get; set; }
 
         public Guid PortfolioId { get; set; }
-        public Portfolio Portfolio { get; set; }
         public string Type { get; set; }
         public double Current { get; set;  }
         public double Initial { get; set; }

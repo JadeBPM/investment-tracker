@@ -12,6 +12,6 @@ namespace BudgetBackend.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public Portfolio Portfolio { get; set; }
+        public virtual Portfolio Portfolio { get; set; } 
     }
 }

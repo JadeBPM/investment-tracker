@@ -15,7 +15,6 @@ namespace BudgetBackend.Models
 
         public List<Investment> Investments { get; set; }
 
-        public Guid UserId { get; set; }
-        public User User { get; set; }
+        public virtual Guid UserId { get; set; }
     }
 }

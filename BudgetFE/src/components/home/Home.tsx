@@ -1,17 +1,41 @@
 import * as React from 'react';
 import axios from 'axios';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {Form, Button, Col} from 'react-bootstrap';
+import { Investment } from './model';
 import './style.css';
 
 function Home() {
 
-  const submitInvestment = () => {
-    console.log("F")
-    axios.post('http://localhost:5200/Investment/CreateInvestment', { Amount: 100, type: "voo"})
-      .then((response: any) => {
-        console.log("post finished")
-      })
+  const [investments, setInvestments] = useState<Investment[]>();
+
+  useEffect(() => {
+
+    axios.get('http://localhost:5200/Investment/GetInvestments')
+    .then((response: { data: Investment[]}) => {
+      console.log(response)
+      setInvestments(response.data);
+    })
+  },[]);
+
+
+  function submitInvestment() {
+   console.log(investments)
+  }
+
+  function displayInvestments() {
+
+    return(
+      <div>
+        {
+          investments?.map(x => {
+            return(<div>
+              {x.type}
+            </div>)
+          })
+        }
+      </div>
+    );
   }
 
   return (
@@ -32,13 +56,14 @@ function Home() {
             </Form.Control>
           </Form.Group>
           <div className="btn-inv">
-            <Button variant="primary" type="submit" onClick={submitInvestment}>
+            <Button variant="primary" type="submit" onClick={() => submitInvestment}>
               +
             </Button>
           </div>
           
         </Form.Row>
       </Form>
+      {displayInvestments()}
     </div>
   );
 };
