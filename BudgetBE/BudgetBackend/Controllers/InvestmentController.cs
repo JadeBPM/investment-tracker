@@ -27,19 +27,19 @@ namespace BudgetBackend.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateInvestment(int amount, string type)
+        public IActionResult CreateInvestment([FromBody] NewInvestment newInvestment)
         {
             using (var context = new UserContext())
             {
                 var user = context.Users.Include(x => x.Portfolio).ToList().Find(x => x.Id == new Guid("CCB2EB11-FA37-426D-A545-43999A7FBDFA"));
-                Investment investment = new Investment(type, amount);
+                Investment investment = new Investment(newInvestment.type, newInvestment.amount);
                 InvestmentHistory investmentHistory = new InvestmentHistory(DateTime.UtcNow, investment.Initial);
 
                 if (user.Portfolio == null)
                 {
                     Portfolio portfolio = new Portfolio();
-                    user.Portfolio = portfolio;                    
-                } 
+                    user.Portfolio = portfolio;
+                }
 
                 investment.InvestmentHistories.Add(investmentHistory);
                 user.Portfolio.Investments.Add(investment);
@@ -55,19 +55,26 @@ namespace BudgetBackend.Controllers
         {
             using (var context = new UserContext())
             {
-                try 
+                try
                 {
                     var user = context.Users.Include(q => q.Portfolio).ThenInclude(q => q.Investments).ToList().Find(x => x.Id == new Guid("CCB2EB11-FA37-426D-A545-43999A7FBDFA"));
-                   
+
                     return Ok(user.Portfolio.Investments);
-                } 
+                }
                 catch (Exception e)
                 {
                     _logger.LogError($"Failed to get investments: {e}");
                     return BadRequest();
                 }
             }
-        }
 
+
+        }
+        public class NewInvestment
+        {
+            public string type { get; set; }
+            public int amount { get; set; }
+        }
     }
+
 }

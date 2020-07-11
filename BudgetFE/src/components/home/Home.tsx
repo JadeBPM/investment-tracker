@@ -19,11 +19,6 @@ function Home() {
     })
   },[]);
 
-
-  function submitInvestment() {
-   console.log(investments)
-  }
-
   function displayInvestments() {
 
     return(

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Formik } from 'formik';
 import {Form, Button, Col} from 'react-bootstrap';
+import axios from 'axios';
 import * as Yup from 'yup';
 
 const InvestmentSchema = Yup.object().shape({
@@ -20,6 +21,8 @@ const AddInvestmentForm = () => (
     onSubmit={values => {
       // same shape as initial values
       console.log("Test",values);
+      // Send a POST request
+      axios.post("http://localhost:5200/Investment/CreateInvestment", values)
     }}
   >
     {({ handleSubmit,
